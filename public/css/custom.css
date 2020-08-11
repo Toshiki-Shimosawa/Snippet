@@ -1,0 +1,13 @@
+.block1{
+    background-color:grey;
+}
+.block2{
+    background-color: yellow;
+}
+.box{
+    background-color: #e4fcff;
+    border-top: solid 6px #1dc1d6;
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.32);
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
