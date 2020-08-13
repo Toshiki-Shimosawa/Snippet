@@ -17,11 +17,24 @@ Route::get('/index', function () {
     return view('index');
 });
 
+Route::get('/snippets', 'SnippetController@lists')->name('snippets');
+Route::post('/snippets', 'SnippetController@search')->name('snippetsSearch');
+Route::post('/confirm', 'SnippetController@confirm')->name('confirm');
+Route::get('/check', function () {
+    return view('check');
+});
+Route::post('/commit', 'SnippetController@commit')->name('commit');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/laravel', function () {
-    return view('laravel');
+Route::get('/console', function () {
+    if(Auth::check()){
+        return view('console');
+    }else{
+        
+        return view('auth/login');
+    }
+    
 });
-
