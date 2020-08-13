@@ -2,12 +2,13 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use Faker\Generator as Faker;
+use App\Snippet;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(Snippet::class, function (Faker $faker) {
     return [
         'title'=>$faker->word,
         'description'=>$faker->text,
-        'language'=>'Laravel',
+        'language'=>'laravel',
         'type'=>1
     ];
 });

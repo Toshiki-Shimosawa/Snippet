@@ -1,8 +1,17 @@
+body{
+    height: 3000px;
+}
+
+ul{
+    list-style: none;
+}
+
 .block1{
-    background-color:grey;
+    background-color:#e4fcff;
+    box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.32);
 }
 .block2{
-    background-color: yellow;
+    margin-top: 20px;
 }
 .box{
     background-color: #e4fcff;
@@ -10,4 +19,39 @@
     box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.32);
     margin-left: 5vw;
     margin-right: 5vw;
+    margin-top: 15px;
+    padding-bottom: 0.5vw;
+}
+.box dt{
+    margin-left: 10px;
+}
+
+.snippetText{
+    background-color:#fff;
+    margin-left: 5vw;
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    border: solid 1px rgb(0, 165, 189);
+    border-radius: 6px;
+    padding-left: 5px;
+}
+
+.menuTag a{
+    color: rgb(10, 10, 10);
+}
+.menuTag{
+    color: #fff;
+    margin-top: 7px;
+  
+}
+
+.searchForm{
+    float: right;
+    display: inline-flex;
+}
+
+.card{
+    margin-top: 5vw;
+    margin-right: 10vw;
+    margin-left: 10vw;
 }

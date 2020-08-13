@@ -19,8 +19,9 @@ class CreateSnippetsTable extends Migration
             $table->text('description');
             $table->string('language',30);
             $table->integer('type');
-            $table->timestamps();
-
+            $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->timestamp('updated_at')->useCurrent()->nullable();
+            
         });
     }
 
