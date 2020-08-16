@@ -30,17 +30,17 @@
                     <input type="search" name="search" placeholder="キーワードの入力" class="form-control">
                     <input type="submit" name="submit" value="検索" class="btn btn-info mb-2 searchForm">
                 </form>
-                
+
                 @foreach($items as $item)
                     <div id="{{$item->id}}" class="box {{$item->language}}">
                         <dt>[{{$item->language}}] {{$item->title}}</dt>
                         <div class="snippetText">
-                        
+
 <dd><pre><code>
 {{$item->description}}
 </code></pre></dd>
-                            
-                        
+
+
                     </div>
                     <div class="btn-group-sm editDelete" role="group" aria-label="edit delete">
                         <button type="button" class="btn btn-info"><a href="{{route('edit')}}?id={{$item->id}}">編集</a></button>
@@ -70,5 +70,10 @@
             $('.menuTag:not(.js)').hide();
             $('.box:not(.js)').hide();
         });
+        @if (session('alert'))
+            alert( "{{ session('alert') }}" );
+        @endif
     </script>
+
+
 @endsection

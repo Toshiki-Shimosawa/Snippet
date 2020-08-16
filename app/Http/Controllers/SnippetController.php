@@ -32,8 +32,8 @@ class SnippetController extends Controller
             'language' => $request->language,
             'type' => $request->type
         ]);
-        
-        return view('home');
+
+        return redirect('snippets')->with('alert', '新規作成しました');
     }
 
     function delete(Request $request){
@@ -57,7 +57,7 @@ class SnippetController extends Controller
         $article->description = $request->description;
         $article->save();
         $items = Snippet::all();
-        return view('lists',compact('items'));
+        return redirect('snippets')->with('alert', '編集作成しました');
     }
 }
 
