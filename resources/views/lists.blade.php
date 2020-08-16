@@ -42,6 +42,10 @@
                             
                         
                     </div>
+                    <div class="btn-group-sm editDelete" role="group" aria-label="edit delete">
+                        <button type="button" class="btn btn-info"><a href="{{route('edit')}}?id={{$item->id}}">編集</a></button>
+                        <button type="button" class="btn btn-danger"><a href="{{route('delete')}}?id={{$item->id}}">削除</a></button>
+                      </div>
                 </div>
                 @endforeach
             </div>

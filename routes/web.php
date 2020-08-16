@@ -33,8 +33,16 @@ Route::get('/console', function () {
     if(Auth::check()){
         return view('console');
     }else{
-        
+
         return view('auth/login');
     }
     
 });
+
+Route::get('delete', 'SnippetController@delete')->name('delete');
+
+Route::get('remove', 'SnippetController@remove')->name('remove');
+
+Route::get('edit', 'SnippetController@edit')->name('edit');
+
+Route::post('edit', 'SnippetController@editCommit')->name('editCommit');

@@ -1,6 +1,15 @@
 body{
     height: 3000px;
 }
+a{
+    text-decoration: none;
+    color:#fff;
+    
+}
+a:link, a:visited, a:hover, a:active{
+    color:#fff;
+}
+
 
 ul{
     list-style: none;
@@ -54,4 +63,9 @@ ul{
     margin-top: 5vw;
     margin-right: 10vw;
     margin-left: 10vw;
+}
+
+.editDelete{
+ text-align: right;
+ margin-right: 15px;
 }

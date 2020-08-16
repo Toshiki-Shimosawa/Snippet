@@ -35,4 +35,29 @@ class SnippetController extends Controller
         
         return view('home');
     }
+
+    function delete(Request $request){
+        $article = Snippet::find($request->id);
+        return view('delete',compact('article'));
+    }
+
+    function remove(Request $request){
+        $article = Snippet::find($request->id)->delete();
+        $items = Snippet::all();
+        return view('lists',compact('items'));
+    }
+
+    function edit(Request $request){
+        $article = Snippet::find($request->id);
+        return view('edit',compact('article'));
+    }
+    function editCommit(Request $request){
+        $article = Snippet::find($request->id);
+        $article->title = $request->title;
+        $article->description = $request->description;
+        $article->save();
+        $items = Snippet::all();
+        return view('lists',compact('items'));
+    }
 }
+
