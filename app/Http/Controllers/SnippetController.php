@@ -33,12 +33,17 @@ class SnippetController extends Controller
             'type' => $request->type
         ]);
         
-        return view('home');
+        return redirect('snippets')->with('createMessage','新規投稿を登録しました');
     }
 
     function delete(Request $request){
-        $article = Snippet::find($request->id);
-        return view('delete',compact('article'));
+        if(Auth::check()){
+            $article = Snippet::find($request->id);
+            return view('delete',compact('article'));
+        }else{
+            return view('auth/login');
+        }
+        
     }
 
     function remove(Request $request){
@@ -48,8 +53,13 @@ class SnippetController extends Controller
     }
 
     function edit(Request $request){
-        $article = Snippet::find($request->id);
-        return view('edit',compact('article'));
+        if(Auth::check()){
+            $article = Snippet::find($request->id);
+            return view('edit',compact('article'));
+        }else{
+            return view('auth/login');
+        }
+       
     }
     function editCommit(Request $request){
         $article = Snippet::find($request->id);

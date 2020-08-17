@@ -2,7 +2,7 @@
 
 @section('content')
    
-    <div class="card">
+    <div class="card edit">
         <h5 class="card-header">新規登録フォーム</h5>
         <div class="card-body">
             <form action="confirm" method="POST">
