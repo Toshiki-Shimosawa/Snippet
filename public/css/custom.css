@@ -1,12 +1,19 @@
 body{
     height: 3000px;
 }
+
 a{
     text-decoration: none;
-    color:#fff;
-    
 }
-a:link, a:visited, a:hover, a:active{
+
+.listsRow{
+    height: 3000px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+.operation{
     color:#fff;
 }
 
@@ -14,10 +21,15 @@ a:link, a:visited, a:hover, a:active{
 ul{
     list-style: none;
 }
+#app .navbar{
+    z-index: 10;
+}
 
 .block1{
-    background-color:#e4fcff;
+    background-color:rgb(65, 67, 70);
     box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.32);
+    padding-top:20px;
+    height: 100%;
 }
 .block2{
     margin-top: 20px;
@@ -45,13 +57,23 @@ ul{
     padding-left: 5px;
 }
 
-.menuTag a{
-    color: rgb(10, 10, 10);
+.col-3{
+    width: 100%;
+    padding: 0 !important;
 }
+
 .menuTag{
+    width: 100%;
     color: #fff;
-    margin-top: 7px;
-  
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.menuTag:hover{
+    background-color: rgb(45, 46, 46);
+    color: rgb(7, 161, 97);
+    font-weight: 600;
 }
 
 .searchForm{
@@ -59,7 +81,7 @@ ul{
     display: inline-flex;
 }
 
-.card{
+.edit.card{
     margin-top: 5vw;
     margin-right: 10vw;
     margin-left: 10vw;
@@ -69,3 +91,40 @@ ul{
  text-align: right;
  margin-right: 15px;
 }
+
+.toUpper{
+    display: inline-flex;
+    flex-direction: column;
+    position: fixed;
+    right: 50px;
+    bottom: 0px;
+    border-radius: 100px;
+    box-shadow: 3px 0px 4px rgba(0, 0, 0, 0.32);
+    background-color: #929597;
+    color: #fff;
+    font-size: 1.4vw;
+    width: 8vw;
+    height: 8vw;
+    text-align: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.linkLogo{
+    height: 3vw;
+}
+
+.sideLink{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vw;
+}
+
+.changeAlert{
+    background-color: #f5f128;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+

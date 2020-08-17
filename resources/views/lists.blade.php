@@ -1,16 +1,23 @@
+<div class="changeAlert">
+</div>
 @extends('layouts/app')
 
 @section('subTitle','TOP')
 
 @section('content')
     <div>
-        <div class="row">
+        <div class="row listsRow">
+            
             <div class="col-3 block1">
-                <ul>
+              
                     @foreach ($items as $item)
-                        <li class="menuTag {{$item->language}}"><a href="#{{$item->id}}">[{{$item->language}}] {{$item->title}}</a></li>
+                    <a href="#{{$item->id}}"><p class="menuTag {{$item->language}}">&nbsp;&nbsp;&nbsp;&nbsp;#[{{$item->language}}] {{$item->title}}</p></a>
                     @endforeach
-                </ul>
+                    <hr>
+            
+                <div class="sideLink">
+                    <a href="https://github.com/Toshiki-Shimosawa?tab=repositories" target="_blank" rel="noopener noreferrer"><img src="{{asset('img/gitlogo.png')}}" alt="githublogo" class="linkLogo"></a>
+                </div>
             </div>
             <div class="col-9 block2">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
@@ -39,18 +46,23 @@
 <dd><pre><code>
 {{$item->description}}
 </code></pre></dd>
-                            
-                        
+          
+                        </div>
+                        <div class="btn-group-sm editDelete" role="group" aria-label="edit delete">
+                            <button type="button" class="btn btn-info"><a href="{{route('edit')}}?id={{$item->id}}" class="operation">編集</a></button>
+                            <button type="button" class="btn btn-danger"><a href="{{route('delete')}}?id={{$item->id}}" class="operation">削除</a></button>
+                        </div>
                     </div>
-                    <div class="btn-group-sm editDelete" role="group" aria-label="edit delete">
-                        <button type="button" class="btn btn-info"><a href="{{route('edit')}}?id={{$item->id}}">編集</a></button>
-                        <button type="button" class="btn btn-danger"><a href="{{route('delete')}}?id={{$item->id}}">削除</a></button>
-                      </div>
-                </div>
                 @endforeach
             </div>
         </div>
     </div>
+    <a href="#">
+    <div class="toUpper">
+        <i class="fas fa-angle-up"></i>
+        <p>TOPへ</p>
+    </div>
+    </a>
 @endsection
 
 @section('js')
@@ -70,5 +82,40 @@
             $('.menuTag:not(.js)').hide();
             $('.box:not(.js)').hide();
         });
+    </script>
+    <script>
+        $(function(){
+
+            function animation(){
+                $('.toUpper').each(function(){
+                    var windowHeight = $(window).height();
+                    var scroll = $(window).scrollTop();
+                        if(scroll>windowHeight){
+                            $(this).css("opacity","0.8");
+                            $(this).css("transition","0.7s");
+                            $(this).css('transform','translateY(-50px)');
+                        }else{
+                            $(this).css("opacity","0");
+                            $(this).css("transform","translateY(100px)");
+                        }
+                });
+            }
+            animation();
+            $(window).scroll(function(){
+                animation();
+            });
+        });
+    </script>
+    <script>
+        $(function(){
+            $('.changeAlert').hide();
+            @if(session('createMessage'))
+                $('.changeAlert').text('{{session('createMessage')}}').show();
+                $('.changeAlert').hide(3000);
+                
+            
+            @endif
+        });
+       
     </script>
 @endsection
