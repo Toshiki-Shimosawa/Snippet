@@ -66,7 +66,7 @@ class LoginController extends Controller
 
     public function logout(Request $request){
         $this->performLogout($request);
-        return  redirect()->route('snippets');
+        return  redirect('snippets')->with('createMessage','ログアウト完了しました');
     }
 
 }
