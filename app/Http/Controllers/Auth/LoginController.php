@@ -35,6 +35,7 @@ class LoginController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -44,4 +45,5 @@ class LoginController extends Controller
         $this->performLogout($request);
         return  redirect()->route('snippets');
     }
+
 }

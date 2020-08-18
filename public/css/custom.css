@@ -126,5 +126,6 @@ ul{
     display: flex;
     justify-content: center;
     text-align: center;
+    transition: 2.0s;
 }
 

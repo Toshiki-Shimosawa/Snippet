@@ -49,7 +49,7 @@ class SnippetController extends Controller
     function remove(Request $request){
         $article = Snippet::find($request->id)->delete();
         $items = Snippet::all();
-        return view('lists',compact('items'));
+        return redirect('snippets')->with('createMessage','投稿を削除しました');
     }
 
     function edit(Request $request){
@@ -67,7 +67,7 @@ class SnippetController extends Controller
         $article->description = $request->description;
         $article->save();
         $items = Snippet::all();
-        return view('lists',compact('items'));
+        return redirect('snippets')->with('createMessage','投稿内容を修正しました');
     }
 }
 

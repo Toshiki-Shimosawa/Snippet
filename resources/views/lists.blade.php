@@ -111,9 +111,10 @@
             $('.changeAlert').hide();
             @if(session('createMessage'))
                 $('.changeAlert').text('{{session('createMessage')}}').show();
-                $('.changeAlert').hide(3000);
-                
             
+            setTimeout(() => {
+                $('.changeAlert').hide(3000);
+            }, 3000);
             @endif
         });
        
