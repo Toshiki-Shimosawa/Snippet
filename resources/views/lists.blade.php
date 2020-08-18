@@ -7,14 +7,14 @@
 @section('content')
     <div>
         <div class="row listsRow">
-            
+
             <div class="col-3 block1">
-              
+
                     @foreach ($items as $item)
                     <a href="#{{$item->id}}"><p class="menuTag {{$item->language}}">&nbsp;&nbsp;&nbsp;&nbsp;#[{{$item->language}}] {{$item->title}}</p></a>
                     @endforeach
                     <hr>
-            
+
                 <div class="sideLink">
                     <a href="https://github.com/Toshiki-Shimosawa?tab=repositories" target="_blank" rel="noopener noreferrer"><img src="{{asset('img/gitlogo.png')}}" alt="githublogo" class="linkLogo"></a>
                 </div>
@@ -37,16 +37,16 @@
                     <input type="search" name="search" placeholder="キーワードの入力" class="form-control">
                     <input type="submit" name="submit" value="検索" class="btn btn-info mb-2 searchForm">
                 </form>
-                
+
                 @foreach($items as $item)
                     <div id="{{$item->id}}" class="box {{$item->language}}">
                         <dt>[{{$item->language}}] {{$item->title}}</dt>
                         <div class="snippetText">
-                        
+
 <dd><pre><code>
 {{$item->description}}
 </code></pre></dd>
-          
+
                         </div>
                         <div class="btn-group-sm editDelete" role="group" aria-label="edit delete">
                             <button type="button" class="btn btn-info"><a href="{{route('edit')}}?id={{$item->id}}" class="operation">編集</a></button>
@@ -111,12 +111,12 @@
             $('.changeAlert').hide();
             @if(session('createMessage'))
                 $('.changeAlert').text('{{session('createMessage')}}').show();
-            
-            setTimeout(() => {
-                $('.changeAlert').hide(3000);
-            }, 3000);
+
+                setTimeout(() => {
+                    $('.changeAlert').hide();
+                }, 3000)
             @endif
         });
-       
+
     </script>
 @endsection
