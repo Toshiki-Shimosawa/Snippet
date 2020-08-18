@@ -30,6 +30,9 @@
                     <label class="btn btn-secondary">
                       <input type="radio" name="options" id="option3" autocomplete="off"> JavaScript
                     </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option4" autocomplete="off"> その他
+                      </label>
                 </div>
                 <a href="{{url('console')}}"><button class="btn btn-info">新規登録</button></a>
                 <form action="snippets" method="POST" class="searchForm">
@@ -81,6 +84,11 @@
             $('.js').show();
             $('.menuTag:not(.js)').hide();
             $('.box:not(.js)').hide();
+        });
+        $('#option4').on('click',()=>{
+            $('.others').show();
+            $('.menuTag:not(.others)').hide();
+            $('.box:not(.others)').hide();
         });
     </script>
     <script>

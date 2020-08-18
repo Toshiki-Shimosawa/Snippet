@@ -21,6 +21,7 @@
                         <option value="htmlcss">HTML/CSS</option>
                         <option value="laravel">Laravel</option>
                         <option value="js">JavaScript</option>
+                        <option value="others">その他</option>
                     </select>
                 </div>
                 <div class="form-group">
